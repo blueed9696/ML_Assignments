@@ -45,7 +45,7 @@ class NeuralNetwork:
         self.output_size = output_size
 
         # Create input layer perceptrons
-        self.input_layer = [Perceptron(num_inputs=input_size, init_weight=0.1, init_bias=0) for _ in range(input_size)]
+        self.input_layer = [Perceptron(num_inputs=1, init_weight=0.1, init_bias=0) for _ in range(input_size)]
 
         # Create hidden layer perceptrons
         self.hidden_layer = [Perceptron(num_inputs=input_size, init_weight=0.1, init_bias=0) for _ in range(hidden_size)]
