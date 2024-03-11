@@ -91,14 +91,28 @@ class NeuralNetwork:
 # Example usage
 if __name__ == '__main__':
     # Create a neural network with 2 input neurons, 2 hidden neurons, and 1 output neuron
-    nn = NeuralNetwork(input_size=2, hidden_size=2, output_size=1)
+    nn = NeuralNetwork(input_size=11, hidden_size=6, output_size=1)
 
     # Example dataset
-    inputs = [[0.5, 0.3], [0.2, 0.8], [0.1, 0.4]]
-    labels = [[0.7], [0.3], [0.5]]
+    inputs = [
+    [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.5],
+    [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.1, 0.2],
+    [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.1, 0.2, 0.3],
+    [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.1, 0.2, 0.3, 0.4],
+    [0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+    ]
+
+    # Example labels
+    labels = [
+        [0.7],
+        [0.3],
+        [0.5],
+        [0.8],
+        [0.2]
+    ]
 
     # Training the neural network for 100 epochs
-    nn.train(inputs, labels, epochs=100)
+    nn.train(inputs, labels, learning_rate= 0.2, epochs=1000)
 
     # Testing the neural network
     for input_data in inputs:
