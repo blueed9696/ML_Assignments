@@ -89,8 +89,10 @@ class NeuralNetwork:
                 # Calculate hidden layer 2 deltas
                 # Delta = o(1-o) * sum(output_delta*output_weights)
                 # o = output from hidden layer 2
+                
                 # Calculate o(1-o) first --> preparing for hidden 2 deltas
                 pre_hidden_2_deltas = [hidden_layer_2_outputs[i]*(1 -  hidden_layer_2_outputs[i]) for i in range(self.hidden_layer2_size)]
+                
                 # Backpropagation for hidden layer 2
                 for i, perceptron in enumerate(self.hidden_layer_2):
                     # Calculate sum(delta.output * weights.output)
@@ -105,8 +107,10 @@ class NeuralNetwork:
                 # Calculate hidden layer 1 deltas
                 # Delta = o(1-o) * sum(hidden2_delta*hidden2_weights)
                 # o = output from hidden layer 1
+                    
                 # Calculate o(1-o) first --> preparing for hidden 1 deltas
                 pre_hidden_1_deltas = [hidden_layer_1_outputs[i]*(1 -  hidden_layer_1_outputs[i]) for i in range(self.hidden_layer1_size)]
+                
                 # Backpropagation for hidden layer 2
                 for i, perceptron in enumerate(self.hidden_layer_1):
                     # Calculate sum(delta.output * weights.output)
